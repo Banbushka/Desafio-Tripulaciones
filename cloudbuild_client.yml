@@ -4,8 +4,12 @@ steps:
     args:
         - '-c'
         - |
-          URL=$(gcloud run services describe mi-servicio-server --region europe-west1 --format='value(status.url)')
-          echo "Cloud Run URL: $URL"
+          gcloud run services describe mi-servicio-server --region europe-west1 --format='value(status.url)') > url.txt
+          URL_CONTENT=$(cat url.txt)
+
+          # Crea el secreto en Secret Manager con el contenido de url.txt
+          echo -n "$URL_CONTENT" | gcloud secrets create dodoria --data-file=-
+
   # Configura el entorno
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['config', 'set', 'project', 'desafio-de-tripulaciones']
