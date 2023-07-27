@@ -7,10 +7,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: 
-      {"/login": process.env.URL_UWE,
-       "/signup": process.env.URL_UWE,
-       "/logout": process.env.URL_UWE,
-       "/quiz": process.env.URL_UWE
+      {"/login": process.env.URL_SERVER,
+       "/signup": process.env.URL_SERVER,
+       "/logout": process.env.URL_SERVER,
+       "/quiz": process.env.URL_SERVER
       }
   },
   define: {

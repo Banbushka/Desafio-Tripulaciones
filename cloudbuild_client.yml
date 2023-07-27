@@ -1,13 +1,4 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
-    args:
-        - '-c'
-        - |
-          gcloud run services describe mi-servicio-server --region europe-west1 --format='value(status.url)' > url.txt
-          read -r URL_UWE < url.txt
-
-
   # Configura el entorno
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['config', 'set', 'project', 'desafio-de-tripulaciones']
@@ -31,7 +22,13 @@ steps:
         --platform=managed
         --allow-unauthenticated
         --port=5173
-        --update-env-vars URL_UWE=$$URL_UWE"
+        --update-env-vars URL_SERVER=$$URL_SERVER"
     ]
-
+    secretEnv: [
+      'URL_SERVER'
+    ]
+availableSecrets:
+      secretManager:
+        - versionName: projects/133006933274/secrets/url/versions/latest
+          env: URL_SERVER
 
