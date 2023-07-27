@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Footer from "./Footer";
+import MapInfo from "./MapInfo";
 
-describe("Footer", () => {
+describe("MapInfo", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<Footer />);
+    const wrapper = shallow(<MapInfo />);
     expect(wrapper).toMatchSnapshot();
   });
 });

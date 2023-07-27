@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Infobar from "./Infobar";
+import Gallery from "./Gallery";
 
-describe("Infobar", () => {
+describe("Gallery", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<Infobar />);
+    const wrapper = shallow(<Gallery />);
     expect(wrapper).toMatchSnapshot();
   });
 });
