@@ -31,13 +31,7 @@ steps:
         --platform=managed
         --allow-unauthenticated
         --port=5173
-        --update-env-vars URL_SERVER=$$URL_SERVER"
+        --update-env-vars URL_UWE=$$URL_UWE"
     ]
-    secretEnv: [
-      'URL_SERVER'
-    ]
-availableSecrets:
-      secretManager:
-        - versionName: projects/133006933274/secrets/url/versions/latest
-          env: URL_SERVER
+
 
