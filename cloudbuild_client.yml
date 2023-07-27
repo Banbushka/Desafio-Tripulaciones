@@ -4,7 +4,7 @@ steps:
     args:
         - '-c'
         - |
-          gcloud run services describe mi-servicio-server --region europe-west1 --format='value(status.url)') > url.txt
+          gcloud run services describe mi-servicio-server --region europe-west1 --format='value(status.url)' > url.txt
           read -r URL_UWE < url.txt
 
 
