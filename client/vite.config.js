@@ -7,10 +7,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: 
-      {"/login": "https://mi-servicio-server-u4ktx3b6jq-ew.a.run.app",
-       "/signup": "https://mi-servicio-server-u4ktx3b6jq-ew.a.run.app",
-       "/logout": "https://mi-servicio-server-u4ktx3b6jq-ew.a.run.app",
-       "/quiz": "https://mi-servicio-server-u4ktx3b6jq-ew.a.run.app"
+      {"/login": process.env.URL_SERVER,
+       "/signup": process.env.URL_SERVER,
+       "/logout": process.env.URL_SERVER,
+       "/quiz": process.env.URL_SERVER
       }
   },
   define: {
