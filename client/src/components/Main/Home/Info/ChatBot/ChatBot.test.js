@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import NavBar from "./NavBar";
+import ChatBot from "./ChatBot";
 
-describe("NavBar", () => {
+describe("ChatBot", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<NavBar />);
+    const wrapper = shallow(<ChatBot />);
     expect(wrapper).toMatchSnapshot();
   });
 });
