@@ -1,5 +1,5 @@
 steps:
-  # Configura el entorno
+  # Configura el entorno1
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['config', 'set', 'project', 'desafio-de-tripulaciones']
 
