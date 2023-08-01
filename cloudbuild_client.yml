@@ -22,13 +22,16 @@ steps:
         --platform=managed
         --allow-unauthenticated
         --port=5173
-        --update-env-vars URL_SERVER=$$URL_SERVER"
+        --update-env-vars URL_SERVER=$$URL_SERVER
+        --update-env-vars VITE_URL_CHAT=$$VITE_URL_CHAT"
     ]
     secretEnv: [
-      'URL_SERVER'
+      'URL_SERVER', 'VITE_URL_CHAT'
     ]
 availableSecrets:
       secretManager:
         - versionName: projects/133006933274/secrets/url/versions/latest
           env: URL_SERVER
+        - versionName: projects/133006933274/secrets/apichatgpt/versions/latest
+          env: VITE_URL_CHAT
 
